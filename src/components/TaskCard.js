@@ -14,6 +14,7 @@ export const TaskCard = ({ task }) => {
       <h1 className='py-2 text-3xl font-bold'>{task.title}</h1>
       <p className='py-2 text-2xl text-gray-300'>{task.description}</p>
       <div className='flex items-center justify-between'>
+        <span className='text-xs text-slate-400'>{task.id}</span>
         <button
           className='inline-flex items-center px-3 py-1 bg-red-700 rounded-sm hover:bg-red-600'
           onClick={(e) => {
@@ -27,7 +28,6 @@ export const TaskCard = ({ task }) => {
         >
           Delete
         </button>
-        <span className='text-xs text-slate-400'>{task.id}</span>
       </div>
     </div>
   )

@@ -6,7 +6,7 @@ function Page() {
   const { tasks } = useTasks()
 
   return (
-    <div className='grid grid-cols-3'>
+    <div className='grid grid-cols-4'>
       {tasks.map((task) => (
         <TaskCard task={task} key={task.id} />
       ))}

@@ -8,17 +8,23 @@ export default function Navbar() {
   const { tasks } = useTasks()
 
   return (
-    <header className='flex justify-between bg-gray-800 px-28 py-3 text-white'>
+    <header className='flex justify-between px-3 py-2 text-white bg-gray-800 md:px-28'>
       <Link href='/'>
-        <h1 className='font-bold text-3xl'>Task App</h1>
+        <h1 className='text-2xl font-bold md:text-3xl'>Task App</h1>
+        <span className='text-lg cursor-default text-slate-300'>
+          {tasks.length} tasks
+        </span>
       </Link>
-      <span className='text-slate-300 text-lg cursor-default leading-9'>
-        {tasks.length} tasks
-      </span>
-      <div>
+      <div className='inline-flex items-center'>
         <button
           onClick={() => router.push('/new')}
-          className='bg-green-500 hover:bg-green-400 px-5 py-2 text-gray-50 font-bold rounded-lg items-center inline-flex'
+          className='px-5 py-2 text-lg bg-green-500 rounded-lg  md:hidden'
+        >
+          new
+        </button>
+        <button
+          onClick={() => router.push('/new')}
+          className='items-center hidden px-5 py-2 font-bold leading-9 bg-green-500 rounded-lg hover:bg-green-400 text-gray-50 md:block'
         >
           Add new task
         </button>
